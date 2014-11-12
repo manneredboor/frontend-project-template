@@ -17,7 +17,7 @@
 * `gulp-iconfont-css`
 * `gulp-jade`
 * `gulp-prettify`
-* `gulp-stylus"`
+* `gulp-stylus`
 * `gulp-uglify`
 * `gulp-webserver`
 * `gulp.spritesmith`
