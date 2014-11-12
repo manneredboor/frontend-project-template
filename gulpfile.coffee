@@ -100,7 +100,8 @@ gulp.task 'watch', ->
 	gulp.watch 'dev/templates/**/*.jade', ['jade']
 	gulp.watch 'dev/stylus/**/*.styl', ['stylus']
 	gulp.watch 'dev/coffee/**/*.coffee', ['coffee']
-	gulp.watch 'dev/sprite/**/*.png', ['spritesmith']
+	gulp.watch 'dev/sprite-png/**/*.png', ['spritesmith']
+	gulp.watch 'dev/sprite-svg/**/*.svg', ['iconfont']
 	gulp.watch 'dev/resources/**/*', ['copy']
 
-gulp.task 'default', ['jade', 'stylus', 'coffee', 'spritesmith', 'copy', 'webserver', 'watch']
+gulp.task 'default', ['jade', 'stylus', 'coffee', 'spritesmith', 'iconfont', 'copy', 'webserver', 'watch']
