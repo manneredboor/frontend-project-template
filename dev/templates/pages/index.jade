@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block head
+	- pageTitle = 'Frontend Project Template';
+	- pageDescription = 'A template for a quick start of the project';
+	- pageKeywords = 'project, template, frontend, gulp, jade, stylus, coffeescript, spritesmith, iconfont';
+
+block scripts
+	+script(['js/main.js'])
+
+block content
+	include ../blocks/main
