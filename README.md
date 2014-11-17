@@ -4,10 +4,10 @@
 
 ## Used Packages
 
+* `browser-sync`
 * `coffee-script`
 * `gulp`
 * `gulp-autoprefixer`
-* `gulp-clean`
 * `gulp-coffee`
 * `gulp-combine-media-queries`
 * `gulp-copy`
@@ -19,7 +19,7 @@
 * `gulp-prettify`
 * `gulp-stylus`
 * `gulp-uglify`
-* `gulp-webserver`
+* `gulp-util`
 * `gulp.spritesmith`
 * `lodash`
 
