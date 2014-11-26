@@ -2,18 +2,28 @@
 // ==========================================================================
 
 // Reset default styles.
-*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
 	margin 0
 	padding 0
 	font-size inherit
 	font-family inherit
 	box-sizing border-box
-	will-change all
 
 	&:before
 	&:after
 		box-sizing border-box
-		will-change all
 
 // HTML5 display definitions
 // ==========================================================================
@@ -57,15 +67,13 @@ template
 // Base
 // ==========================================================================
 
-// 1. Set default font family to sans-serif.
-// 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
-// 3. Remove highlite on mobile devices.
-// 4. Prevent user select.
+// 1 Prevent iOS text size adjust after orientation change, without disabling user zoom.
+// 2. Remove highlite on mobile devices.
+// 3. Prevent user select.
 html
-	font-family sans-serif // 1
-	-ms-text-size-adjust 100% // 2
-	-webkit-text-size-adjust 100% // 2
-	-webkit-tap-highlight-color rgba(0, 0, 0, 0) // 3
+	-ms-text-size-adjust 100%
+	-webkit-text-size-adjust 100%
+	-webkit-tap-highlight-color rgba(0, 0, 0, 0)
 	user-select none
 
 // Set 100% line-height
@@ -83,10 +91,14 @@ a
 	background transparent
 
 // Improve readability when focused and also mouse hovered in all browsers.
-*:focus
-*:active
-*:hover
-	outline 0
+input
+select
+textarea
+button
+	&:focus,
+	&:active,
+	&:hover
+		outline 0
 
 // Typography
 // ==========================================================================
