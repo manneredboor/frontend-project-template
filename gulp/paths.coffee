@@ -19,7 +19,8 @@ module.exports =
 		dest: 'dev/resources/fonts/sprite'
 
 	jade:
-		src: 'dev/templates/pages/**/*.jade'
+		src: 'dev/jade/pages/**/*.jade'
+		watch: 'dev/jade/**/*.jade'
 		dest: 'dist'
 
 	spritesmith:

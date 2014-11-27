@@ -12,7 +12,8 @@ module.exports = ->
 	gulp.src paths.stylus.src
 		.pipe stylus()
 			.on 'error', errhandler
-		.pipe do csscomb
+		.pipe csscomb()
+			.on 'error', errhandler
 		.pipe do cmq
 		.pipe autoprefixer [
 			'Android >= '	+ pkg.browsers.android,
