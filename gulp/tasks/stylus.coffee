@@ -14,7 +14,8 @@ module.exports = ->
 			.on 'error', errhandler
 		.pipe csscomb()
 			.on 'error', errhandler
-		.pipe do cmq
+		.pipe cmq()
+			.on 'error', errhandler
 		.pipe autoprefixer [
 			'Android >= '	+ pkg.browsers.android,
 			'Chrome >= '	+ pkg.browsers.chrome,

@@ -1,0 +1,48 @@
+@font-face
+	font-family 'iconfont'
+	src url('../fonts/sprite/iconfont.eot');
+	src url('../fonts/sprite/iconfont.eot?#iefix') format('eot'),
+		url('../fonts/sprite/iconfont.woff') format('woff'),
+		url('../fonts/sprite/iconfont.ttf') format('truetype'),
+		url('../fonts/sprite/iconfont.svg#iconfont') format('svg')
+
+.iconfont
+	font-family 'iconfont'
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	font-style normal
+	font-variant normal
+	font-weight normal
+	// speak none // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration none
+	text-transform none
+
+$iconfont-fontname = 'iconfont'
+
+
+$iconfont-fb = '\E001'
+
+$iconfont-gp = '\E002'
+
+$iconfont-tw = '\E003'
+
+$iconfont-vk = '\E004'
+
+
+iconfont($icon, $insert = before)
+	&:{$insert}
+		@extend .iconfont
+		content $icon
+
+.iconfont-fb
+	iconfont($iconfont-fb)
+	
+.iconfont-gp
+	iconfont($iconfont-gp)
+	
+.iconfont-tw
+	iconfont($iconfont-tw)
+	
+.iconfont-vk
+	iconfont($iconfont-vk)
+	

@@ -5,7 +5,9 @@
 ## Used Packages
 
 * `browser-sync`
+* `browserify`
 * `coffee-script`
+* `coffeeify`
 * `gulp`
 * `gulp-autoprefixer`
 * `gulp-coffee`
@@ -17,11 +19,14 @@
 * `gulp-iconfont-css`
 * `gulp-jade`
 * `gulp-prettify`
+* `gulp-streamify`
 * `gulp-stylus`
 * `gulp-uglify`
 * `gulp-util`
 * `gulp.spritesmith`
+* `jquery`
 * `lodash`
+* `vinyl-source-stream`
 
 # 
 

@@ -6,4 +6,7 @@ module.exports = ->
 	browserSync.init paths.sync,
 		server:
 			baseDir: './dist'
-		
+		logFileChanges: false
+		open: true
+		notify: false
+		minify: false

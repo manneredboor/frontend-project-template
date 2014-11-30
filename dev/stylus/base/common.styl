@@ -3,23 +3,30 @@ html
 	height 100%
 
 body
+	font-family Arial
 	color #333
-	background #fff
+	line-height 1.5
+	background #ddd
 
 .clearfix
 	clearfix()
 
-.center
-	text-align center
+.align
+	&-center
+		text-align center
+
+	&-right
+		text-align right
+		
+	&-left
+		text-align right
 
 .mainwrap
 	min-height 100%
-	margin-bottom -141px
+	margin-bottom - $footerHeight
+	
 	&:after
-		content ""
+		content ''
 		display block
-		height 140px
-		
-.footer,
-.mainwrap
-	hieght 140px
+		height $footerHeight
+	

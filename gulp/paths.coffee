@@ -2,6 +2,12 @@ module.exports =
 	dev: 'dev'
 	dist: 'dist'
 
+	browserify:
+		src: './dev/coffee/main.coffee'
+		bundle: 'main.js'
+		dest: 'dist/js'
+		watch: [ 'dev/coffee/**/*.coffee', 'dev/coffee/**/*.js' ]
+
 	coffee:
 		src: 'dev/coffee/**/*.coffee'
 		dest: 'dist/js'
@@ -12,11 +18,12 @@ module.exports =
 		prefix: 2
 
 	iconfont:
-		src: 'dev/sprite-svg/**/*.svg'
-		fontName: 'sprite-svg'
-		targetPath: '../../../stylus/helpers/sprite-svg.styl'
+		src: 'dev/iconfont/**/*.svg'
+		fontName: 'iconfont'
+		targetPath: '../../../stylus/helpers/iconfont.styl'
 		fontPath: '../fonts/sprite/'
 		dest: 'dev/resources/fonts/sprite'
+		template: 'gulp/templates/iconfont.styl'
 
 	jade:
 		src: 'dev/jade/pages/**/*.jade'

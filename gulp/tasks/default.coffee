@@ -1,7 +1,8 @@
 module.exports = [
 	'jade'
 	'stylus'
-	'coffee'
+	'browserify'
+	# 'coffee'
 	'spritesmith'
 	'iconfont'
 	'copy'
