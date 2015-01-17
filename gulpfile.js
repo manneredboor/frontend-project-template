@@ -1,9 +1,9 @@
 require('coffee-script/register');
 
 require('./gulp/loadtasks.coffee')([
-	'browserify',
+	// 'browserify',
 	'browsersync',
-	// 'coffee',
+	'scripts',
 	'copy',
 	'default',
 	'iconfont',

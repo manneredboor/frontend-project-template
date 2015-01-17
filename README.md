@@ -4,6 +4,7 @@
 
 ## Used Packages
 
+* `bemto.jade`
 * `browser-sync`
 * `browserify`
 * `coffee-script`
@@ -17,6 +18,7 @@
 * `gulp-cssmin`
 * `gulp-iconfont`
 * `gulp-iconfont-css`
+* `gulp-if`
 * `gulp-jade`
 * `gulp-prettify`
 * `gulp-streamify`
@@ -27,6 +29,7 @@
 * `jquery`
 * `lodash`
 * `vinyl-source-stream`
+* `watchify`
 
 # 
 

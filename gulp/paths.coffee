@@ -4,13 +4,20 @@ module.exports =
 
 	browserify:
 		src: './dev/coffee/main.coffee'
-		bundle: 'main.js'
 		dest: 'dist/js'
+		bundle: 'main.js'
 		watch: [ 'dev/coffee/**/*.coffee', 'dev/coffee/**/*.js' ]
 
-	coffee:
-		src: 'dev/coffee/**/*.coffee'
+	scripts:
+		src: [
+			'dev/scripts/libs/jquery.min.js',
+			'dev/scripts/libs/**/*.js',
+			'dev/scripts/**/*.js',
+			'dev/scripts/**/*.coffee'
+		]
 		dest: 'dist/js'
+		bundle: 'main.js'
+		watch: ['dev/scripts/**/*.coffee', 'dev/scripts/**/*.js']
 
 	resources:
 		src: 'dev/resources/**/*'
@@ -20,9 +27,9 @@ module.exports =
 	iconfont:
 		src: 'dev/iconfont/**/*.svg'
 		fontName: 'iconfont'
-		targetPath: '../../../stylus/helpers/iconfont.styl'
-		fontPath: '../fonts/sprite/'
-		dest: 'dev/resources/fonts/sprite'
+		targetPath: '../../../dev/stylus/helpers/iconfont.styl'
+		fontPath: '../fonts/iconfont/'
+		dest: 'dist/fonts/iconfont'
 		template: 'gulp/templates/iconfont.styl'
 
 	jade:
@@ -31,11 +38,11 @@ module.exports =
 		dest: 'dist'
 
 	spritesmith:
-		src: 'dev/sprite-png/**/*.png'
+		src: 'dev/sprite/**/*.png'
 		imgName: 'sprite.png'
 		imgPath: '../images/sprite.png'
-		cssName: 'sprite-png.styl'
-		imgDest: 'dev/resources/images'
+		cssName: 'sprite.styl'
+		imgDest: 'dist/images'
 		cssDest: 'dev/stylus/helpers'
 
 	stylus:
