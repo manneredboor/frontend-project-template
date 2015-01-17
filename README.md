@@ -1,6 +1,6 @@
 # Frontend Project Template
 
-**A template for a quick start of the frontend project**
+**for a quick start**
 
 ## Used Packages
 
@@ -13,6 +13,7 @@
 * `gulp-autoprefixer`
 * `gulp-coffee`
 * `gulp-combine-media-queries`
+* `gulp-concat`
 * `gulp-copy`
 * `gulp-csscomb`
 * `gulp-cssmin`
@@ -33,4 +34,4 @@
 
 # 
 
-######<small>Author: Podlesny Dmitry</small>
+######<small>Author: Dmitry Podlesny</small>
