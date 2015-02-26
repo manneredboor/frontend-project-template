@@ -1,12 +1,19 @@
-module.exports = [
-	'jade'
-	'stylus'
-	# 'browserify'
-	# 'watchify'
-	'scripts'
-	'spritesmith'
-	'iconfont'
-	'copy'
-	'browsersync'
-	'watch'
-]
+runSequence = require 'run-sequence'
+
+module.exports = ->
+
+  runSequence 'clean',
+  [
+    'spritesmith'
+    'iconfont'
+    'copy'
+  ], [
+    # 'browserify'
+    # 'watchify'
+    'jade'
+    'stylus'
+    'scripts'
+  ], [
+    'browsersync'
+    'watch'
+  ]

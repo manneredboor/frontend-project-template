@@ -29,6 +29,7 @@
 * `gulp.spritesmith`
 * `jquery`
 * `lodash`
+* `run-sequence`
 * `vinyl-source-stream`
 * `watchify`
 
