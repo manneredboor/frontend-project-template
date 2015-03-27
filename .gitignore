@@ -28,7 +28,8 @@ Thumbs.db
 .CVS
 .idea
 bower_components
-dist
+/dist
+/temp
 
 # Node.JS
 node_modules

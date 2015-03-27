@@ -1,31 +1,32 @@
 gulp        = require 'gulp'
 watchify    = require 'watchify'
+gutil       = require 'gulp-util'
 browserify  = require 'browserify'
-uglify      = require 'gulp-uglify'
 streamify   = require 'gulp-streamify'
 source      = require 'vinyl-source-stream'
 paths       = require '../paths.coffee'
 errhandler  = require '../errhandler.coffee'
 
-bundler = browserify({
-    entries: [ paths.browserify.src ],
-    extensions: ['.coffee']
-  })
-  .transform 'coffeeify'
+b = browserify
+    entries: [ paths.browserify.src ]
+    transform: [ 'caching-coffeeify' ]
+    extensions: [ '.coffee' ]
+    paths: paths.browserify.paths
+    cache: {}
+    packageCache: {}
+    fullPaths: true
+
+w = watchify b
+
+produceBundle = ->
+  gutil.log gutil.colors.cyan  'Producing bundle ' + paths.browserify.src
+  w
   .bundle()
     .on 'error', errhandler
   .pipe source paths.browserify.bundle
-  .pipe streamify do uglify
   .pipe gulp.dest paths.browserify.dest
 
-rebundler = watchify bundler
-rebundler.on 'update', rebundle
-
-rebundle = ->
-  bundler.bundle()
-    .pipe source paths.browserify.bundle
-    .pipe gulp.dest paths.browserify.dest
+w.on 'update', produceBundle
 
 module.exports = ->
-  bundler()
-  
+  produceBundle()

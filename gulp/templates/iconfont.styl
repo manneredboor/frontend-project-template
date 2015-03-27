@@ -1,6 +1,6 @@
 @font-face
   font-family '<%= fontName %>'
-  src url('<%= fontPath %><%= fontName %>.eot');
+  src url('<%= fontPath %><%= fontName %>.eot')
   src url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
     url('<%= fontPath %><%= fontName %>.woff') format('woff'),
     url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
@@ -19,16 +19,12 @@
 
 $iconfont-fontname = '<%= fontName %>'
 
+$iconfont = {}
 <% _.each(glyphs, function(glyph) { %>
-$iconfont-<%= glyph.fileName %> = '\<%= glyph.codePoint %>'
+$iconfont['<%= glyph.fileName %>'] = '\<%= glyph.codePoint %>'
 <% }); %>
 
 iconfont($icon, $insert = before)
   &:{$insert}
     @extend .iconfont
-    content $icon
-
-<% _.each(glyphs, function(glyph) { %>.iconfont-<%= glyph.fileName %>
-  iconfont($iconfont-<%= glyph.fileName %>)
-  
-<% }); %>
+    content $iconfont[$icon]

@@ -17,13 +17,13 @@ module.exports = ->
     .pipe cmq()
       .on 'error', errhandler
     .pipe autoprefixer [
-      'Android >= ' + pkg.browsers.android,
-      'Chrome >= '  + pkg.browsers.chrome,
-      'Firefox >= ' + pkg.browsers.firefox,
-      'Explorer >= '  + pkg.browsers.ie,
-      'iOS >= '   + pkg.browsers.ios,
-      'Opera >= '   + pkg.browsers.opera,
-      'Safari >= '  + pkg.browsers.safari
+      'Android >= '  + pkg.browsers.android,
+      'Chrome >= '   + pkg.browsers.chrome,
+      'Firefox >= '  + pkg.browsers.firefox,
+      'Explorer >= ' + pkg.browsers.ie,
+      'iOS >= '      + pkg.browsers.ios,
+      'Opera >= '    + pkg.browsers.opera,
+      'Safari >= '   + pkg.browsers.safari
     ]
     .pipe do cssmin
     .pipe gulp.dest paths.stylus.dest

@@ -1,0 +1,19 @@
+{
+  "name": "frontend-project-template",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ManneredBoor/frontend-project-template",
+  "authors": [
+    "Dmitry Podlesny <rezed93@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}

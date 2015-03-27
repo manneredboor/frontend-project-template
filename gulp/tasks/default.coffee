@@ -4,15 +4,17 @@ module.exports = ->
 
   runSequence 'clean',
   [
-    'spritesmith'
-    'iconfont'
     'copy'
+    'bower'
+    'iconfont'
+    'spritesmith'
   ], [
-    # 'browserify'
-    # 'watchify'
     'jade'
     'stylus'
     'scripts'
+    'browserify'
+  ], [
+    'bundles'
   ], [
     'browsersync'
     'watch'

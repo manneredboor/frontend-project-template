@@ -5,8 +5,9 @@ paths       = require '../paths.coffee'
 module.exports = ->
   spriteData = gulp.src paths.spritesmith.src
     .pipe spritesmith
+      cssTemplate: paths.spritesmith.template
       imgName: paths.spritesmith.imgName
-      imgPath: paths.spritesmith.imgPath 
+      imgPath: paths.spritesmith.imgPath
       cssName: paths.spritesmith.cssName
       algorithm: 'binary-tree'
   spriteData.img.pipe gulp.dest paths.spritesmith.imgDest

@@ -1,0 +1,90 @@
+{{#block "comment"}}
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+Usage examples
+
+.icon-home {
+  spriteWidth('home')
+}
+
+.icon-email {
+  sprite('email')
+}
+*/
+{{/block}}
+
+{{#block "sprites"}}
+$sprites = {}
+
+{{#each sprites}}
+// {{name}}
+$sprites['{{name}}'] = {}
+$sprites['{{name}}']['name'] = '{{name}}'
+$sprites['{{name}}']['x'] = {{px.x}}
+$sprites['{{name}}']['y'] = {{px.y}}
+$sprites['{{name}}']['offset_x'] = {{px.offset_x}}
+$sprites['{{name}}']['offset_y'] = {{px.offset_y}}
+$sprites['{{name}}']['width'] = {{px.width}}
+$sprites['{{name}}']['height'] = {{px.height}}
+$sprites['{{name}}']['total_width'] = {{px.total_width}}
+$sprites['{{name}}']['total_height'] = {{px.total_height}}
+$sprites['{{name}}']['image'] = '{{{escaped_image}}}'
+
+{{/each}}
+{{/block}}
+{{#block "spritesheet"}}
+// Spritesheet
+$spritesheet = {}
+$spritesheet['width'] = {{spritesheet.px.width}}
+$spritesheet['height'] = {{spritesheet.px.height}}
+$spritesheet['image'] = '{{{spritesheet.escaped_image}}}'
+{{/block}}
+
+{{#block "mixins"}}
+// Mixins
+spriteImage($sprite)
+  background-image: url($sprites[$sprite]['image'])
+
+spritePosition($sprite)
+  background-position: $sprites[$sprite]['x'] $sprites[$sprite]['y']
+
+spriteWidth($sprite)
+  width: $sprites[$sprite]['width']
+
+spriteHeight($sprite)
+  height: $sprites[$sprite]['height']
+
+sprite($sprite)
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+
+// Retina Mixins
+_d(_val)
+  (_val / 2)
+
+sprite2Image($sprite)
+  background-image: url($sprites[$sprite]['image'])
+  background-repeat: no-repeat
+
+sprite2Position($sprite)
+  background-position: _d($sprites[$sprite]['x'] $sprites[$sprite]['y'])
+
+sprite2Width($sprite)
+  width: _d($sprites[$sprite]['width'])
+
+sprite2Height($sprite)
+  height: _d($sprites[$sprite]['height'])
+
+sprite2Size($sprite)
+  background-size: _d($sprites[$sprite]['total_width']) _d($sprites[$sprite]['total_height'])
+
+sprite2($sprite)
+  sprite2Width($sprite)
+  sprite2Height($sprite)
+  sprite2Image($sprite)
+  sprite2Position($sprite)
+  sprite2Size($sprite)
+{{/block}}

@@ -1,31 +1,3 @@
-// Devide `_val` by 2.
-_d(_val)
-  (_val / 2)
-
-sprite2Width($sprite)
-  width _d($sprite[4])
-
-sprite2Height($sprite)
-  height _d($sprite[5])
-
-sprite2Image($sprite)
-  background-image url($sprite[8])
-  background-repeat no-repeat
-
-sprite2Position($sprite)
-  background-position _d($sprite[2]) _d($sprite[3]);
-
-sprite2Size($sprite)
-  background-size _d($sprite[6]) _d($sprite[7])
-
-// All sprite image properties for Retina.
-sprite2($sprite)
-  sprite2Width($sprite)
-  sprite2Height($sprite)
-  sprite2Image($sprite)
-  sprite2Position($sprite)
-  sprite2Size($sprite)
-
 // Clear the float on any element.
 clearfix()
   &:after
@@ -40,7 +12,48 @@ fix-text-size-adjust()
 // Inner constructor
 inner($maxWidth, $minWidth, $padding)
   margin 0 auto
-  max-width $maxWidth + $padding * 2
+  max-width $maxWidth
   min-width $minWidth
   padding-right $padding
   padding-left $padding
+
+// Placeholder font color
+placeholder($color, $focusColor)
+  &::-webkit-input-placeholder
+    color $color
+    transition color .375s
+    
+  &:-ms-input-placeholder
+    color $color
+    transition color .375s
+    
+  &::-moz-placeholder
+    color $color
+    opacity 1
+    transition color .375s
+    
+  &:-moz-placeholder
+    color $color
+    opacity 1
+    transition color .375s
+    
+  &:focus
+    
+    &::-webkit-input-placeholder
+      color $focusColor
+      transition color .175s
+      
+    &:-ms-input-placeholder
+      color $focusColor
+      transition color .175s
+      
+    &::-moz-placeholder
+      color $focusColor
+      opacity 1
+      transition color .175s
+      
+    &:-moz-placeholder
+      color $focusColor
+      opacity 1
+      transition color .175s
+    
