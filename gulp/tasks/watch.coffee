@@ -1,5 +1,5 @@
-gulp      = require 'gulp'
-paths     = require '../paths.coffee'
+gulp  = require 'gulp'
+paths = require '../paths.coffee'
 
 gulp.task 'watch', ->
   gulp.watch paths.bower.watch,       ['bower']

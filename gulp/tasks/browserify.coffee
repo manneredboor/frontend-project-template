@@ -1,11 +1,11 @@
-gulp        = require 'gulp'
-watchify    = require 'watchify'
-gutil       = require 'gulp-util'
-browserify  = require 'browserify'
-streamify   = require 'gulp-streamify'
-source      = require 'vinyl-source-stream'
-paths       = require '../paths.coffee'
-errhandler  = require '../errhandler.coffee'
+gulp       = require 'gulp'
+watchify   = require 'watchify'
+gutil      = require 'gulp-util'
+browserify = require 'browserify'
+streamify  = require 'gulp-streamify'
+source     = require 'vinyl-source-stream'
+paths      = require '../paths.coffee'
+errhandler = require '../errhandler.coffee'
 
 b = browserify
     entries: [ paths.browserify.src ]
