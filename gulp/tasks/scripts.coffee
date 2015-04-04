@@ -5,7 +5,7 @@ concat      = require 'gulp-concat'
 paths       = require '../paths.coffee'
 errhandler  = require '../errhandler.coffee'
 
-module.exports = ->
+gulp.task 'scripts', ->
   gulp.src paths.scripts.src
     .pipe gulpif(/[.]coffee$/, coffee()).on('error', errhandler)
     .pipe concat paths.scripts.bundle

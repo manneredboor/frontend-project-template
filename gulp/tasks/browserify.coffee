@@ -28,5 +28,5 @@ produceBundle = ->
 
 w.on 'update', produceBundle
 
-module.exports = ->
+gulp.task 'browserify', ->
   produceBundle()

@@ -13,7 +13,7 @@ if paths.sync.rewrite
     ]
   ]
 
-module.exports = ->
+gulp.task 'browsersync', ->
   browserSync.init paths.sync.watch,
     server:
       params

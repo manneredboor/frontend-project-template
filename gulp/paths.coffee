@@ -9,30 +9,30 @@ module.exports =
 
   browserify:
     src: './dev/scripts/main.coffee'
-    dest: 'temp'
-    bundle: 'browserify-bundle.js'
-    paths: [
-      './dev/scripts/'
-    ]
     watch: [
       '!dev/scripts/plugins'
       '!dev/scripts/libs'
       'dev/scripts/**/*.coffee'
       'dev/scripts/**/*.js'
     ]
+    bundle: 'browserify-bundle.js'
+    paths: [
+      './dev/scripts/'
+    ]
+    dest: 'temp'
 
   bower:
     bundleNames: {
       js: 'bower-bundle.js'
       css: 'bower-bundle.css'
     }
-    destDirs: {
+    watch: 'bower.json'
+    dest: {
       js: './temp/'
       css: './temp/'
       fonts: './temp/bower/fonts'
       images: './temp/bower/images'
     }
-    watch: 'bower.json'
 
   scripts:
     src: [
@@ -41,14 +41,14 @@ module.exports =
       'dev/scripts/plugins/*.js'
       'dev/scripts/plugins/*.coffee'
     ]
-    dest: 'temp/'
-    bundle: 'mybundle.js'
     watch: [
       'dev/scripts/libs/**/*.js'
       'dev/scripts/libs/**/*.coffee'
       'dev/scripts/plugins/*.js'
       'dev/scripts/plugins/*.coffee'
     ]
+    bundle: 'mybundle.js'
+    dest: 'temp/'
 
   bundles:
     src: [
@@ -56,18 +56,19 @@ module.exports =
       'temp/mybundle.js'
       'temp/browserify-bundle.js'
     ]
-    dest: 'dist/js'
-    bundle: 'main.js'
     watch: [
       'temp/bower-bundle.js'
       'temp/mybundle.js'
       'temp/browserify-bundle.js'
     ]
+    bundle: 'main.js'
+    dest: 'dist/js'
 
   resources:
     src: 'dev/resources/**/*'
-    dest: 'dist'
+    watch: 'dev/resources/**/*'
     prefix: 2
+    dest: 'dist'
 
   jade:
     src: 'dev/jade/pages/**/*.jade'
@@ -76,6 +77,7 @@ module.exports =
 
   iconfont:
     src: 'dev/iconfont/**/*.svg'
+    watch: 'dev/iconfont/**/*.svg'
     fontName: 'iconfont'
     fontPath: '../fonts/iconfont/'
     template: 'gulp/templates/iconfont.styl'
@@ -84,6 +86,7 @@ module.exports =
 
   spritesmith:
     src: 'dev/sprite/**/*.png'
+    watch: 'dev/sprite/**/*.png'
     cssName: 'sprite.styl'
     cssDest: 'temp/stylus/'
     imgName: 'sprite.png'
@@ -96,11 +99,11 @@ module.exports =
       'dev/stylus/**/*.styl',
       '!dev/stylus/{base,blocks,helpers,partials}/**/*'
     ]
-    dest: 'dist/css'
     watch: [
       'temp/stylus/**/*.styl'
       'dev/stylus/**/*.styl'
     ]
+    dest: 'dist/css'
     
   sync:
     rewrite: true

@@ -2,7 +2,7 @@ gulp        = require 'gulp'
 spritesmith = require 'gulp.spritesmith'
 paths       = require '../paths.coffee'
 
-module.exports = ->
+gulp.task 'spritesmith', ->
   spriteData = gulp.src paths.spritesmith.src
     .pipe spritesmith
       cssTemplate: paths.spritesmith.template

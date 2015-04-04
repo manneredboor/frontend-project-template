@@ -4,7 +4,7 @@ prettify    = require 'gulp-prettify'
 paths       = require '../paths.coffee'
 errhandler  = require '../errhandler.coffee'
 
-module.exports = ->
+gulp.task 'jade', ->
   gulp.src paths.jade.src
     .pipe jade()
       .on 'error', errhandler

@@ -3,7 +3,7 @@ del   = require 'del'
 gutil = require 'gulp-util'
 paths = require '../paths.coffee'
 
-module.exports = ->
+gulp.task 'clean', ->
   del.sync paths.clean
 
   paths.clean.forEach (dir) ->

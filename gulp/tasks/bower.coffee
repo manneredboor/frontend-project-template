@@ -11,30 +11,30 @@ cssFilter   = gulpFilter '*.css'
 fontFilter  = gulpFilter ['*.eot', '*.woff', '*.svg', '*.ttf']
 imageFilter = gulpFilter ['*.gif', '*.png', '*.svg', '*.jpg', '*.jpeg']
 
-module.exports = ->
+gulp.task 'bower', ->
   
   gulp.src bowerMain()
     
     # JS
     .pipe jsFilter
     .pipe concat paths.bower.bundleNames.js
-    .pipe gulp.dest paths.bower.destDirs.js
+    .pipe gulp.dest paths.bower.dest.js
     .pipe jsFilter.restore()
     
     # CSS
     .pipe cssFilter
     .pipe concat paths.bower.bundleNames.css
-    .pipe gulp.dest paths.bower.destDirs.css
+    .pipe gulp.dest paths.bower.dest.css
     .pipe cssFilter.restore()
     
     # FONTS
     .pipe fontFilter
     .pipe flatten()
-    .pipe gulp.dest paths.bower.destDirs.fonts
+    .pipe gulp.dest paths.bower.dest.fonts
     .pipe fontFilter.restore()
     
     # IMAGES
     .pipe imageFilter
     .pipe flatten()
-    .pipe gulp.dest paths.bower.destDirs.images
+    .pipe gulp.dest paths.bower.dest.images
     .pipe imageFilter.restore()

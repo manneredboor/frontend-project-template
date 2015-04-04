@@ -8,7 +8,7 @@ paths         = require '../paths.coffee'
 pkg           = require '../../package.json'
 errhandler    = require '../errhandler.coffee'
 
-module.exports = ->
+gulp.task 'stylus', ->
   gulp.src paths.stylus.src
     .pipe stylus()
       .on 'error', errhandler
