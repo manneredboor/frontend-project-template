@@ -1,7 +1,8 @@
 gulp       = require 'gulp'
-watchify   = require 'watchify'
-gutil      = require 'gulp-util'
 browserify = require 'browserify'
+watchify   = require 'watchify'
+plumber    = require 'gulp-plumber'
+gutil      = require 'gulp-util'
 streamify  = require 'gulp-streamify'
 source     = require 'vinyl-source-stream'
 paths      = require '../paths.coffee'
@@ -21,10 +22,10 @@ w = watchify b
 produceBundle = ->
   gutil.log gutil.colors.cyan  'Producing bundle ' + paths.browserify.src
   w
-  .bundle()
-    .on 'error', errhandler
-  .pipe source paths.browserify.bundle
-  .pipe gulp.dest paths.browserify.dest
+    .bundle()
+    .pipe plumber errorHandler: errhandler
+    .pipe source paths.browserify.bundle
+    .pipe gulp.dest paths.browserify.dest
 
 w.on 'update', produceBundle
 

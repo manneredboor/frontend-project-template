@@ -17,10 +17,8 @@ loader = (tasks) ->
 
 module.exports = ->
 
-  args = process.argv.slice 2
-  
-  if args.length > 0
-    task = args[0]
+  if gutil.env._.length > 0
+    task = gutil.env._[0]
   else
     task = 'default'
 

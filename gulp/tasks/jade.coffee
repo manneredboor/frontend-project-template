@@ -1,11 +1,13 @@
 gulp        = require 'gulp'
 jade        = require 'gulp-jade'
+newer       = require 'gulp-newer'
 prettify    = require 'gulp-prettify'
 paths       = require '../paths.coffee'
 errhandler  = require '../errhandler.coffee'
 
 gulp.task 'jade', ->
   gulp.src paths.jade.src
+    .pipe newer paths.jade.dest
     .pipe jade()
       .on 'error', errhandler
     .pipe prettify
@@ -17,4 +19,3 @@ gulp.task 'jade', ->
       indent_inner_html: true
       preserve_newlines: true
     .pipe gulp.dest paths.jade.dest
-    

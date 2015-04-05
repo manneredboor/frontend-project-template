@@ -1,30 +1,36 @@
 gulp         = require 'gulp'
+jeet         = require 'jeet'
+gulpif       = require 'gulp-if'
+gutil        = require 'gulp-util'
 stylus       = require 'gulp-stylus'
-csscomb      = require 'gulp-csscomb'
-cmq          = require 'gulp-combine-media-queries'
-cssmin       = require 'gulp-cssmin'
+plumber      = require 'gulp-plumber'
+minify       = require 'gulp-minify-css'
 autoprefixer = require 'gulp-autoprefixer'
+cmq          = require 'gulp-combine-media-queries'
 paths        = require '../paths.coffee'
 pkg          = require '../../package.json'
 errhandler   = require '../errhandler.coffee'
 
 gulp.task 'stylus', ->
   gulp.src paths.stylus.src
-    .pipe stylus()
-      .on 'error', errhandler
-    .pipe csscomb()
-      .on 'error', errhandler
-    .pipe cmq()
-      .on 'error', errhandler
-    .pipe autoprefixer [
-      'Android >= '  + pkg.browsers.android,
-      'Chrome >= '   + pkg.browsers.chrome,
-      'Firefox >= '  + pkg.browsers.firefox,
-      'Explorer >= ' + pkg.browsers.ie,
-      'iOS >= '      + pkg.browsers.ios,
-      'Opera >= '    + pkg.browsers.opera,
-      'Safari >= '   + pkg.browsers.safari
-    ]
-    .pipe do cssmin
+    .pipe plumber errorHandler: errhandler
+    .pipe stylus
+      use: jeet()
+      compress: true
+      sourcemap: unless gutil.env.p then {comment: false, inline: true} else false
+      "include css": true
+    .pipe autoprefixer
+      browsers: [
+        'Android >= '  + pkg.browsers.android,
+        'Chrome >= '   + pkg.browsers.chrome,
+        'Firefox >= '  + pkg.browsers.firefox,
+        'Explorer >= ' + pkg.browsers.ie,
+        'iOS >= '      + pkg.browsers.ios,
+        'Opera >= '    + pkg.browsers.opera,
+        'Safari >= '   + pkg.browsers.safari
+      ],
+      cascade: false
+    .pipe gulpif gutil.env.p, cmq()
+    .pipe gulpif gutil.env.p, minify()
     .pipe gulp.dest paths.stylus.dest
     

@@ -1,8 +1,26 @@
-.vk
-  margin 10px auto 10px
-  font-size 28px
+.tw
+  margin 0 auto
+  line-height 1
+  font-size 26px
+  transform translateZ(0)
   iconfont('tw')
 
 .sprite
-  margin 0 auto 20px
+  margin 0 auto
   sprite('example')
+
+.grid
+  margin-top 20px
+  cf()
+  
+  &__col
+    col(1/3)
+    padding 60px
+    color #555
+    font-size 30px
+    background-color #ccf9f9
+    
+    @media(max-width: 600px)
+      col(1/1)
+      margin-bottom 20px
+      font-size 21px

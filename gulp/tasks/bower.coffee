@@ -1,8 +1,9 @@
 gulp       = require 'gulp'
-bowerMain  = require 'main-bower-files'
+plumber    = require 'gulp-plumber'
 concat     = require 'gulp-concat'
 gulpFilter = require 'gulp-filter'
 flatten    = require 'gulp-flatten'
+bowerMain  = require 'main-bower-files'
 paths      = require '../paths.coffee'
 errhandler = require '../errhandler.coffee'
 
