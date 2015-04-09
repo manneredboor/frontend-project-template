@@ -16,5 +16,6 @@ gulp.task 'iconfont', ->
     .pipe iconfont
       fontName: paths.iconfont.fontName
       normalize: true
+      fontHeight: 1001
     .pipe gulp.dest paths.iconfont.dest
     

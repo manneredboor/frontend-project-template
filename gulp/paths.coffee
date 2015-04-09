@@ -65,8 +65,14 @@ module.exports =
     dest: 'dist/js'
 
   resources:
-    src: 'dev/resources/**/*'
-    watch: 'dev/resources/**/*'
+    src: [
+      'dev/resources/**/*'
+      'dev/resources/**/.*'
+    ]
+    watch: [
+      'dev/resources/**/*'
+      'dev/resources/**/.*'
+    ]
     prefix: 2
     dest: 'dist'
 
@@ -96,7 +102,7 @@ module.exports =
 
   stylus:
     src: [
-      'dev/stylus/**/*.styl',
+      'dev/stylus/**/*.styl'
       '!dev/stylus/{base,blocks,helpers,partials}/**/*'
     ]
     watch: [

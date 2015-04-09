@@ -15,4 +15,3 @@ gulp.task 'spritesmith', ->
       algorithm: 'binary-tree'
   spriteData.img.pipe gulp.dest paths.spritesmith.imgDest
   spriteData.css.pipe gulp.dest paths.spritesmith.cssDest
-
