@@ -1,39 +1,39 @@
 {
-  "default": [
-    "clean",
-    [
-      "copy",
-      "bower",
-      "iconfont",
-      "spritesmith"
-    ], [
-      "jade",
-      "stylus",
-      "scripts",
-      "browserify"
-    ], [
-      "bundles"
-    ], [
-      "browsersync",
-      "watch"
-    ]
-  ],
-  "build": [
-    "clean",
-    [
-      "copy",
-      "bower",
-      "iconfont",
-      "spritesmith"
-    ], [
-      "jade",
-      "stylus",
-      "scripts",
-      "browserify"
-    ], [
-      "bundles"
-    ], [
-      "close"
-    ]
-  ]
+	"default": [
+		"clean",
+		[
+			"copy",
+			"bower",
+			"iconfont",
+			"spritesmith"
+		], [
+			"jade",
+			"stylus",
+			"scripts",
+			"browserify"
+		], [
+			"bundles"
+		], [
+			"browsersync",
+			"watch"
+		]
+	],
+	"build": [
+		"clean",
+		[
+			"copy",
+			"bower",
+			"iconfont",
+			"spritesmith"
+		], [
+			"jade",
+			"stylus",
+			"scripts",
+			"browserify"
+		], [
+			"bundles"
+		], [
+			"close"
+		]
+	]
 }

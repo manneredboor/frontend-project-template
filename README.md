@@ -22,13 +22,13 @@ use gulp bump for update your package json version (--minor and --major flags ar
 * [`gulp-combine-media-queries`](https://www.npmjs.com/package/gulp-combine-media-queries)
 * [`gulp-concat`](https://www.npmjs.com/package/gulp-concat)
 * [`gulp-copy`](https://www.npmjs.com/package/gulp-copy)
+* [`gulp-csso`](https://www.npmjs.com/package/gulp-csso)
 * [`gulp-filter`](https://www.npmjs.com/package/gulp-filter)
 * [`gulp-flatten`](https://www.npmjs.com/package/gulp-flatten)
 * [`gulp-iconfont`](https://www.npmjs.com/package/gulp-iconfont)
 * [`gulp-iconfont-css`](https://www.npmjs.com/package/gulp-iconfont-css)
 * [`gulp-if`](https://www.npmjs.com/package/gulp-if)
 * [`gulp-jade`](https://www.npmjs.com/package/gulp-jade)
-* [`gulp-minify-css`](https://www.npmjs.com/package/gulp-minify-css)
 * [`gulp-newer`](https://www.npmjs.com/package/gulp-newer)
 * [`gulp-plumber`](https://www.npmjs.com/package/gulp-plumber)
 * [`gulp-prettify`](https://www.npmjs.com/package/gulp-prettify)
@@ -44,6 +44,6 @@ use gulp bump for update your package json version (--minor and --major flags ar
 * [`vinyl-source-stream`](https://www.npmjs.com/package/vinyl-source-stream)
 * [`watchify`](https://www.npmjs.com/package/watchify)
 
-# 
+#
 
 ######<small>Author: Dmitry Podlesny</small>

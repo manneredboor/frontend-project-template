@@ -5,11 +5,11 @@ Stylus variables are information about icon's compiled state, stored under its o
 Usage examples
 
 .icon-home {
-  spriteWidth('home')
+	spriteWidth('home')
 }
 
 .icon-email {
-  sprite('email')
+	sprite('email')
 }
 */
 {{/block}}
@@ -44,47 +44,47 @@ $spritesheet['image'] = '{{{spritesheet.escaped_image}}}'
 {{#block "mixins"}}
 // Mixins
 spriteImage($sprite)
-  background-image: url($sprites[$sprite]['image'])
+	background-image: url($sprites[$sprite]['image'])
 
 spritePosition($sprite)
-  background-position: $sprites[$sprite]['x'] $sprites[$sprite]['y']
+	background-position: $sprites[$sprite]['x'] $sprites[$sprite]['y']
 
 spriteWidth($sprite)
-  width: $sprites[$sprite]['width']
+	width: $sprites[$sprite]['width']
 
 spriteHeight($sprite)
-  height: $sprites[$sprite]['height']
+	height: $sprites[$sprite]['height']
 
 sprite($sprite)
-  spriteImage($sprite)
-  spritePosition($sprite)
-  spriteWidth($sprite)
-  spriteHeight($sprite)
+	spriteImage($sprite)
+	spritePosition($sprite)
+	spriteWidth($sprite)
+	spriteHeight($sprite)
 
 // Retina Mixins
 _d(_val)
-  (_val / 2)
+	(_val / 2)
 
 sprite2Image($sprite)
-  background-image: url($sprites[$sprite]['image'])
-  background-repeat: no-repeat
+	background-image: url($sprites[$sprite]['image'])
+	background-repeat: no-repeat
 
 sprite2Position($sprite)
-  background-position: _d($sprites[$sprite]['x'] $sprites[$sprite]['y'])
+	background-position: _d($sprites[$sprite]['x'] $sprites[$sprite]['y'])
 
 sprite2Width($sprite)
-  width: _d($sprites[$sprite]['width'])
+	width: _d($sprites[$sprite]['width'])
 
 sprite2Height($sprite)
-  height: _d($sprites[$sprite]['height'])
+	height: _d($sprites[$sprite]['height'])
 
 sprite2Size($sprite)
-  background-size: _d($sprites[$sprite]['total_width']) _d($sprites[$sprite]['total_height'])
+	background-size: _d($sprites[$sprite]['total_width']) _d($sprites[$sprite]['total_height'])
 
 sprite2($sprite)
-  sprite2Width($sprite)
-  sprite2Height($sprite)
-  sprite2Image($sprite)
-  sprite2Position($sprite)
-  sprite2Size($sprite)
+	sprite2Width($sprite)
+	sprite2Height($sprite)
+	sprite2Image($sprite)
+	sprite2Position($sprite)
+	sprite2Size($sprite)
 {{/block}}

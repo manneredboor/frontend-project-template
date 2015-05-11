@@ -2,10 +2,10 @@ config = require 'config'
 
 module.exports = class App
 
-  debug: (msg) ->
+	debug: (msg) ->
 
-    console.log msg if config.debug
+		console.log msg if config.debug
 
-  constructor: ->
+	constructor: ->
 
-    @debug 'App Initialize'
+		@debug 'App Initialize'

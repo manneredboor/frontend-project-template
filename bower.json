@@ -1,17 +1,17 @@
 {
-  "name": "frontend-project-template",
-  "homepage": "https://github.com/ManneredBoor/frontend-project-template",
-  "authors": [
-    "Dmitry Podlesny <rezed93@gmail.com>"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "~2.1.3"
-  }
+	"name": "frontend-project-template",
+	"homepage": "https://github.com/ManneredBoor/frontend-project-template",
+	"authors": [
+		"Dmitry Podlesny <rezed93@gmail.com>"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"jquery": "~2.1.3"
+	}
 }

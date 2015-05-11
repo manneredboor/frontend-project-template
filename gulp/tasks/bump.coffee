@@ -1,23 +1,23 @@
-gulp  = require 'gulp'
-bump  = require 'gulp-bump'
-gutil = require 'gulp-util'
+gulp	= require 'gulp'
+bump	= require 'gulp-bump'
+gutil	= require 'gulp-util'
 
 gulp.task 'bump', ->
 
-  params = {}
+	params = {}
 
-  if gutil.env.major
-    params =
-      type: 'major'
+	if gutil.env.major
+		params =
+			type: 'major'
 
-  else if gutil.env.minor
-    params =
-      type: 'minor'
+	else if gutil.env.minor
+		params =
+			type: 'minor'
 
-  else if gutil.env.reset
-    params =
-      version: '0.1.0'
+	else if gutil.env.reset
+		params =
+			version: '0.1.0'
 
-  gulp.src 'package.json'
-    .pipe bump params
-    .pipe gulp.dest './'
+	gulp.src 'package.json'
+		.pipe bump params
+		.pipe gulp.dest './'
