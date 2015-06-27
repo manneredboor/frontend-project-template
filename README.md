@@ -37,6 +37,7 @@ use gulp bump for update your package json version (--minor and --major flags ar
 * [`gulp-uglify`](https://www.npmjs.com/package/gulp-uglify)
 * [`gulp-util`](https://www.npmjs.com/package/gulp-util)
 * [`gulp.spritesmith`](https://www.npmjs.com/package/gulp.spritesmith)
+* [`is-there`](https://www.npmjs.com/package/is-there)
 * [`jeet`](https://www.npmjs.com/package/jeet)
 * [`lodash`](https://www.npmjs.com/package/lodash)
 * [`main-bower-files`](https://www.npmjs.com/package/main-bower-files)
