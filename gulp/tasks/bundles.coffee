@@ -1,11 +1,11 @@
-gulp				= require 'gulp'
-gulpif			= require 'gulp-if'
-gutil				= require 'gulp-util'
-uglify			= require 'gulp-uglify'
-concat			= require 'gulp-concat'
-plumber			= require 'gulp-plumber'
-paths				= require '../paths.coffee'
-errhandler	= require '../errhandler.coffee'
+gulp       = require 'gulp'
+gulpif     = require 'gulp-if'
+gutil      = require 'gulp-util'
+uglify     = require 'gulp-uglify'
+concat     = require 'gulp-concat'
+plumber    = require 'gulp-plumber'
+paths      = require '../paths.coffee'
+errhandler = require '../errhandler.coffee'
 
 gulp.task 'bundles', ->
 	gulp.src paths.bundles.src

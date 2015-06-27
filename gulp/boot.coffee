@@ -1,7 +1,7 @@
-_					 = require 'lodash'
-gulp				= require 'gulp'
-gutil			 = require 'gulp-util'
-tasks			 = require './tasks.json'
+_           = require 'lodash'
+gulp        = require 'gulp'
+gutil       = require 'gulp-util'
+tasks       = require './tasks.json'
 runSequence = require 'run-sequence'
 
 loader = (tasks) ->

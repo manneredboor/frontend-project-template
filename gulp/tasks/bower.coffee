@@ -1,20 +1,37 @@
-gulp				= require 'gulp'
-plumber			= require 'gulp-plumber'
-concat			= require 'gulp-concat'
-gulpFilter	= require 'gulp-filter'
-flatten			= require 'gulp-flatten'
-bowerMain		= require 'main-bower-files'
-paths				= require '../paths.coffee'
-errhandler	= require '../errhandler.coffee'
+gulp        = require 'gulp'
+isThere     = require 'is-there'
+plumber     = require 'gulp-plumber'
+concat      = require 'gulp-concat'
+gulpFilter  = require 'gulp-filter'
+flatten     = require 'gulp-flatten'
+bowerMain   = require 'main-bower-files'
+paths       = require '../paths.coffee'
+warnhandler  = require '../warnhandler.coffee'
 
-jsFilter		= gulpFilter '*.js'
-cssFilter		= gulpFilter '*.css'
-fontFilter	= gulpFilter ['*.eot', '*.woff', '*.svg', '*.ttf']
-imageFilter	= gulpFilter ['*.gif', '*.png', '*.svg', '*.jpg', '*.jpeg']
+jsFilter    = gulpFilter '*.js'
+cssFilter   = gulpFilter '*.css'
+fontFilter  = gulpFilter ['*.eot', '*.woff', '*.svg', '*.ttf']
+imageFilter = gulpFilter ['*.gif', '*.png', '*.svg', '*.jpg', '*.jpeg']
 
 gulp.task 'bower', ->
 
-	gulp.src bowerMain()
+	unless isThere paths.bower.json
+		warnhandler
+			plugin: 'bower'
+			message: 'bower.json did not exist'
+		return
+
+	unless isThere paths.bower.dir
+		warnhandler
+			plugin: 'bower'
+			message: 'bower_components did not exist'
+		return
+
+	gulp.src bowerMain
+			paths:
+				bowerDirectory: paths.bower.dir,
+				bowerrc: paths.bower.rc,
+				bowerJson: paths.bower.json
 
 		# JS
 		.pipe jsFilter

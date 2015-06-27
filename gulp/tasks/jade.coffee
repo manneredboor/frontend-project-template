@@ -1,9 +1,9 @@
-gulp				= require 'gulp'
-jade				= require 'gulp-jade'
-newer				= require 'gulp-newer'
-prettify		= require 'gulp-prettify'
-paths				= require '../paths.coffee'
-errhandler	= require '../errhandler.coffee'
+gulp       = require 'gulp'
+jade       = require 'gulp-jade'
+newer      = require 'gulp-newer'
+prettify   = require 'gulp-prettify'
+paths      = require '../paths.coffee'
+errhandler = require '../errhandler.coffee'
 
 gulp.task 'jade', ->
 	gulp.src paths.jade.src

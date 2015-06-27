@@ -1,6 +1,6 @@
-gulp	= require 'gulp'
-bump	= require 'gulp-bump'
-gutil	= require 'gulp-util'
+gulp  = require 'gulp'
+bump  = require 'gulp-bump'
+gutil = require 'gulp-util'
 
 gulp.task 'bump', ->
 

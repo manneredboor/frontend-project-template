@@ -1,8 +1,8 @@
-gulp				= require 'gulp'
-plumber			= require 'gulp-plumber'
-spritesmith	= require 'gulp.spritesmith'
-paths				= require '../paths.coffee'
-errhandler	= require '../errhandler.coffee'
+gulp        = require 'gulp'
+plumber     = require 'gulp-plumber'
+spritesmith = require 'gulp.spritesmith'
+paths       = require '../paths.coffee'
+errhandler  = require '../errhandler.coffee'
 
 gulp.task 'spritesmith', ->
 	spriteData = gulp.src paths.spritesmith.src

@@ -22,11 +22,14 @@ module.exports =
 		dest: 'temp'
 
 	bower:
+		dir: 'bower_components'
+		rc: '.bowerrc'
+		json: 'bower.json'
+		watch: 'bower_components/**/*'
 		bundleNames: {
 			js: 'bower-bundle.js'
 			css: 'bower-bundle.css'
 		}
-		watch: 'bower.json'
 		dest: {
 			js: './temp/'
 			css: './temp/'

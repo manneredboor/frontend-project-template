@@ -1,7 +1,7 @@
-gulp				= require 'gulp'
-browserSync	= require 'browser-sync'
-paths				= require '../paths.coffee'
-modRewrite	= require 'connect-modrewrite'
+gulp        = require 'gulp'
+browserSync = require 'browser-sync'
+paths       = require '../paths.coffee'
+modRewrite  = require 'connect-modrewrite'
 
 params =
 	baseDir: paths.sync.baseDir
