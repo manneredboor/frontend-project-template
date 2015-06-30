@@ -3,13 +3,14 @@
 **for a quick start**
 
 Initialize in 3 steps:
-npm i
-bower i
-gulp
+<br>npm i
+<br>bower i
+<br>gulp
 
-use -p flag on gulp for production building
-use build command building only (without watchers and browsersync)
-use gulp bump for update your package json version (--minor and --major flags are available)
+Special commands:
+<br>use -p flag on gulp for production building
+<br>use build command building only (without watchers and browsersync)
+<br>use gulp bump for update your package json version (--minor and --major flags are available)
 
 ## Used Packages
 
