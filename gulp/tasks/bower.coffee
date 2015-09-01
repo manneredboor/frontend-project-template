@@ -6,12 +6,12 @@ gulpFilter  = require 'gulp-filter'
 flatten     = require 'gulp-flatten'
 bowerMain   = require 'main-bower-files'
 paths       = require '../paths.coffee'
-warnhandler  = require '../warnhandler.coffee'
+warnhandler = require '../warnhandler.coffee'
 
-jsFilter    = gulpFilter '*.js'
-cssFilter   = gulpFilter '*.css'
-fontFilter  = gulpFilter ['*.eot', '*.woff', '*.svg', '*.ttf']
-imageFilter = gulpFilter ['*.gif', '*.png', '*.svg', '*.jpg', '*.jpeg']
+jsFilter    = gulpFilter '*.js', { restore: true }
+cssFilter   = gulpFilter '*.css', { restore: true }
+fontFilter  = gulpFilter ['*.eot', '*.woff', '*.svg', '*.ttf'], { restore: true }
+imageFilter = gulpFilter ['*.gif', '*.png', '*.svg', '*.jpg', '*.jpeg'], { restore: true }
 
 gulp.task 'bower', ->
 
@@ -37,22 +37,22 @@ gulp.task 'bower', ->
 		.pipe jsFilter
 		.pipe concat paths.bower.bundleNames.js
 		.pipe gulp.dest paths.bower.dest.js
-		.pipe jsFilter.restore()
+		.pipe jsFilter.restore
 
 		# CSS
 		.pipe cssFilter
 		.pipe concat paths.bower.bundleNames.css
 		.pipe gulp.dest paths.bower.dest.css
-		.pipe cssFilter.restore()
+		.pipe cssFilter.restore
 
 		# FONTS
 		.pipe fontFilter
 		.pipe flatten()
 		.pipe gulp.dest paths.bower.dest.fonts
-		.pipe fontFilter.restore()
+		.pipe fontFilter.restore
 
 		# IMAGES
 		.pipe imageFilter
 		.pipe flatten()
 		.pipe gulp.dest paths.bower.dest.images
-		.pipe imageFilter.restore()
+		.pipe imageFilter.restore
